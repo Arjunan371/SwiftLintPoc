@@ -1,0 +1,84 @@
+# SwiftLint configuration file
+
+reporter: "xcode" # Report results in Xcode
+
+excluded: # Paths to ignore during linting
+  - Carthage
+  - Pods
+
+disabled_rules: # Rules to disable
+  - trailing_whitespace
+  - force_cast
+  - force_unwrapping
+  - force_try
+  - empty_enum_arguments
+  - overridden_super_call
+  - sorted_imports
+
+opt_in_rules: # Opt-in rules to enable
+  - empty_count
+  - closure_end_indentation
+  - closure_spacing
+  - explicit_init
+  - first_where
+  - number_separator
+  - vertical_parameter_alignment_on_call
+  - multiline_parameters
+  - nesting
+  - private_outlet  # Make sure this rule is enabled
+
+line_length:
+  warning: 200
+  error: 250
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_urls: true
+
+function_body_length:
+  warning: 80
+  error: 150
+
+function_parameter_count:
+  warning: 4
+  error: 6
+
+type_name: # Class name
+  min_length: 3
+  max_length:
+    warning: 60
+    error: 80
+
+type_body_length:
+  warning: 300
+  error: 500
+
+file_length:
+  warning: 500
+  error: 800
+  ignore_comment_only_lines: true
+
+identifier_name: # Variable name
+  allowed_symbols: "_"
+  min_length: 1
+  max_length:
+    warning: 60
+    error: 80
+  excluded:
+    - id
+    - URL
+    - GlobalAPIKey
+
+vertical_whitespace:
+  max_empty_lines: 1 # Maximum number of consecutive empty lines
+
+large_tuple:
+  warning: 4
+  error: 5
+
+number_separator:
+  minimum_length: 8
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+  warning: 7
+  error: 11
